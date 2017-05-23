@@ -9,7 +9,7 @@ elif [ $serverbuild == *"centos"* ]
 else
 	echo "Cannot determine Build Type... Exiting" >> /home/test
 	exit 3
-fi  
+fi
 echo "# Disable TCP Timestamps" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_timestamps=0" >> /etc/sysctl.conf
 echo "security hardening complete" >> /home/test
