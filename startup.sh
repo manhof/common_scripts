@@ -16,7 +16,8 @@ elif [ $serverbuild == *"centos"* ]
     yum install dnf -y
 	dnf install unzip -y
 	dnf install tcpdump -y
-	dnf install traceroute -y 
+	dnf install traceroute -y
+	dnf update -y
 else
        echo "Cannot determine Build Type... Exiting" >> /home/test
 	   exit 3
