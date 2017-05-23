@@ -1,5 +1,6 @@
 # common_scripts
-These are useful scripts for doing things like enabling ntp disabling tcp_timestamps... etc etc 
+These are useful scripts for doing things like enabling ntp disabling tcp_timestamps... etc etc
+
 cas.sh
 --- This script will update and add additional Certificate Auths for Ubuntu & Centos Linux
 
