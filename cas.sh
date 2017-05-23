@@ -13,14 +13,14 @@ do
 	mv "$f" "$(basename "$f" .cer).crt"
 done
 echo "Converted Certs" >> /home/test
-if [ $serverbuild == *"ubuntu"* ]
+if [[ $serverbuild == *"ubuntu"* ]]
  then    
     mkdir /usr/local/share/ca-certificates/extra
     cp *.crt /usr/local/share/ca-certificates/extra/
     echo "Certs Copied" >> /home/test
     update-ca-certificates
     echo "Certs Updated" >> /home/test
-elif [ $serverbuild == *"centos"* ]
+elif [[ $serverbuild == *"centos"* ]]
  then
     cp *.crt /etc/pki/ca-trust/source/anchors/
     echo "certs copied" >> /home/test

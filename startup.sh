@@ -3,14 +3,14 @@ hostname=$1
 pub=$2
 echo 'Your Public IP Address is '$pub > /home/test
 serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
-if [ $serverbuild == *"ubuntu"* ]
+if [[ $serverbuild == *"ubuntu"* ]]
  then
 	apt-get update
 	apt-get install unzip -y
 	apt-get install tcpdump -y
 	apt-get install traceroute -y
 	echo "127.0.0.1    $hostname" >> /etc/hosts
-elif [ $serverbuild == *"centos"* ]
+elif [[ $serverbuild == *"centos"* ]]
  then
     yum install epel-release -y
     yum install dnf -y

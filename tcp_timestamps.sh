@@ -1,9 +1,9 @@
 #!/bin/bash
 serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
-if [ $serverbuild == *"ubuntu"* ]
+if [[ $serverbuild = *"ubuntu"* ]]
  then
 	sysctl -w net.ipv4.tcp_timestamps=0
-elif [ $serverbuild == *"centos"* ]
+elif [[ $serverbuild = *"centos"* ]]
  then
 	echo "0" > /proc/sys/net/ipv4/tcp_timestamps
 else

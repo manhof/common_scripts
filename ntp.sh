@@ -1,6 +1,6 @@
 #!/bin/bash
 serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
-if [ $serverbuild == *"ubuntu"* ]
+if [[ $serverbuild == *"ubuntu"* ]]
  then
 	apt-get update
     apt-get install ntp -y
@@ -13,7 +13,7 @@ if [ $serverbuild == *"ubuntu"* ]
     echo "NTP has been configured" >> /home/test
     systemctl restart ntp
     ntpq -p >> /home/test
-elif [ $serverbuild == *"centos"* ]
+elif [[ $serverbuild == *"centos"* ]]
  then
     dnf install chrony -y
 	timedatectl set-ntp 1
