@@ -1,6 +1,7 @@
 #!/bin/bash
 #apache install
-serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
+gawk -F= '/^ID=/{print $2}' /etc/os-release > /home/id.txt
+serverbuild=$(cat /home/id.txt)
 if [[ $serverbuild == *"ubuntu"* ]]
  then
 	add-apt-repository ppa:ondrej/apache2
