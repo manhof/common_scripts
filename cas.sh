@@ -1,7 +1,6 @@
 #!/bin/bash
 gawk -F= '/^ID=/{print $2}' /etc/os-release > /home/id.txt
 serverbuild=$(cat /home/id.txt)
-echo " This is the Server Build: " $serverbuild >> /home/test
 #Certs need to .cer pem files which will be converted to .crt pem files
 for var in "$@"
 do	
