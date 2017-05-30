@@ -1,6 +1,6 @@
 #!/bin/bash
 gawk -F= '/^ID=/{print $2}' /etc/os-release > /home/id.txt
-serverbuild=$(cat /hhome/id.txt)
+serverbuild=$(cat /home/id.txt)
 echo " This is the Server Build: " $serverbuild >> /home/test
 if [[ $serverbuild == *"ubuntu"* ]]
  then
