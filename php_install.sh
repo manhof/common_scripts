@@ -1,6 +1,7 @@
 #!/bin/bash
 #php install
-serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
+gawk -F= '/^ID=/{print $2}' /etc/os-release > /home/id.txt
+serverbuild=$(cat /home/id.txt)
 if [[ $serverbuild == *"ubuntu"* ]]
  then
 	apt-get install software-properties-common -y 
