@@ -3,6 +3,7 @@ hostname=$1
 pub=$2
 echo 'Your Public IP Address is '$pub > /home/test
 serverbuild= gawk -F= '/^ID=/{print $2}' /etc/os-release
+echo $serverbuild >> /home/test
 if [[ $serverbuild == *"ubuntu"* ]]
  then
 	apt-get update
