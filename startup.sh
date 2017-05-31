@@ -12,6 +12,8 @@ if [[ $serverbuild == *"ubuntu"* ]]
 	apt-get install tcpdump -y
 	apt-get install traceroute -y
 	echo "127.0.0.1    $hostname" >> /etc/hosts
+	apt-get upgrade -y
+	apt-get dist-upgrade -y
 elif [[ $serverbuild == *"centos"* ]]
  then
     yum install epel-release -y
