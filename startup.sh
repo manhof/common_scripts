@@ -11,6 +11,7 @@ if [[ $serverbuild == *"ubuntu"* ]]
 	apt-get install unzip -y
 	apt-get install tcpdump -y
 	apt-get install traceroute -y
+	apt-get install pwgen -y
 	echo "127.0.0.1    $hostname" >> /etc/hosts
 	#apt-get upgrade -y
 	#apt-get dist-upgrade -y
@@ -21,6 +22,7 @@ elif [[ $serverbuild == *"centos"* ]]
 	dnf install unzip -y
 	dnf install tcpdump -y
 	dnf install traceroute -y 
+	dnf install pwgen -y
 	dnf update -y
 else
        echo "Cannot determine Build Type... Exiting" >> /home/test
