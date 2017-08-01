@@ -12,13 +12,14 @@ echo "Unziped Certs" >> /home/test
 for f in *.cer 
 do
 	mv "$f" "$(basename "$f" .cer).crt"
+	echo "/extra/$(basename "$f" .cer).crt" >> /etc/ca-certificates.conf
 done
 echo "Converted Certs" >> /home/test
 if [[ $serverbuild == *"ubuntu"* ]]
  then    
-    mkdir /usr/local/share/ca-certificates/extra
-    cp *.crt /usr/local/share/ca-certificates/extra/
-    echo "Certs Copied" >> /home/test
+    mkdir /usr/share/ca-certificates/extra
+    cp *.crt /usr/share/ca-certificates/extra/
+    echo "Certs Copied" >> /home/test  
     update-ca-certificates
     echo "Certs Updated" >> /home/test
 elif [[ $serverbuild == *"centos"* ]]
