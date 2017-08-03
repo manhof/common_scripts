@@ -7,7 +7,8 @@ serverbuild=$(cat /home/id.txt)
 echo " This is the Server Build: " $serverbuild >> /home/test
 if [[ $serverbuild == *"ubuntu"* ]]
  then
-	apt-get update
+	apt-get update &> /dev/null
+	apt-get upgrade -y &> /dev/null 
 	apt-get install unzip -y
 	apt-get install tcpdump -y
 	apt-get install traceroute -y
